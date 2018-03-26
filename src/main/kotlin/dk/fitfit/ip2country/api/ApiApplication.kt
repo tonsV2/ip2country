@@ -19,16 +19,10 @@ fun main(args: Array<String>) {
 
 @RestController
 class Ip2CountryController {
-    @GetMapping("/ip2country/{ip}/code")
-    fun ip2countryCode(@PathVariable ip: String): String {
-        val locale: Locale = ip2locale(ip)
-        return locale.country
-    }
-
     @GetMapping("/ip2country/{ip}")
     fun ip2country(@PathVariable ip: String): String {
         val locale: Locale = ip2locale(ip)
-        return locale.displayCountry
+        return locale.country
     }
 
     private fun ip2locale(ip: String): Locale {
