@@ -27,7 +27,9 @@ class Ip2CountryController {
 
     private fun ip2locale(ip: String): Locale {
         val output = cmd(listOf("geoiplookup", ip))
-        return Locale("", output)
+        val country = output.substring(output.lastIndexOf(": ") + 1);
+        val countryCode = country.split(", ")[0].trim()
+        return Locale("", countryCode)
     }
 
     private fun cmd(command: List<String>): String {
