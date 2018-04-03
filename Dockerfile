@@ -13,3 +13,5 @@ RUN apk --no-cache add geoip && \
 
 COPY --from=builder /app/build/libs/*-SNAPSHOT.jar .
 CMD java -Dserver.port=$PORT -jar *.jar
+EXPOSE 8080
+
