@@ -12,6 +12,6 @@ RUN apk --no-cache add geoip && \
   gunzip GeoIP.dat.gz
 
 COPY --from=builder /app/build/libs/*-SNAPSHOT.jar .
-CMD java -Dserver.port=$PORT -jar *.jar
+CMD java -Dserver.port=$PORT -Dserver.address=0.0.0.0 -jar *.jar
 EXPOSE 8080
 
