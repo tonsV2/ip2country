@@ -1,5 +1,7 @@
 package dk.fitfit.ip2country.api
 
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.web.bind.annotation.GetMapping
@@ -19,8 +21,11 @@ fun main(args: Array<String>) {
 
 @RestController
 class Ip2CountryController {
+    private val logger: Logger = LoggerFactory.getLogger(Ip2CountryController::class.java)
+
     @GetMapping("/ip2country/{ip}")
     fun ip2country(@PathVariable ip: String): String {
+        logger.info("/ip2country/$ip")
         val locale: Locale = ip2locale(ip)
         return locale.country
     }
