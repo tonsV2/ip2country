@@ -13,4 +13,4 @@ RUN apk --no-cache add geoip && \
 
 COPY --from=builder /src/build/libs/*-SNAPSHOT.jar .
 USER guest
-CMD java -jar *.jar
+CMD exec java -jar *.jar
