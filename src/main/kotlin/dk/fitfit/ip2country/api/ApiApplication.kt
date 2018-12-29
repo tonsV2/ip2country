@@ -11,9 +11,8 @@ import java.io.InputStream
 import java.nio.charset.StandardCharsets
 import java.util.*
 
-
 @SpringBootApplication
-open class ApiApplication
+class ApiApplication
 
 fun main(args: Array<String>) {
     runApplication<ApiApplication>(*args)
