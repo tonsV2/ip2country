@@ -42,10 +42,10 @@ class Ip2CountryController {
     }
 
     private fun readStream(stream: InputStream): String {
-        Scanner(stream, StandardCharsets.UTF_8.toString()).use({ scanner ->
+        Scanner(stream, StandardCharsets.UTF_8.toString()).use { scanner ->
             scanner.useDelimiter("\\A")
             return if (scanner.hasNext()) scanner.next() else ""
-        })
+        }
     }
 
 }
