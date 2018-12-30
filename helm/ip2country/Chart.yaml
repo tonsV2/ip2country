@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for ip2country
+name: ip2country
+version: 0.1.0
